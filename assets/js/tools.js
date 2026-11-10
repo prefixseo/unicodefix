@@ -9,6 +9,8 @@ const setModes=(items)=>{if(!mode)return;mode.replaceChildren(...items.map(([val
 const modeSets={
  'preeti-to-unicode':[['preeti-to-unicode','Preeti → Unicode'],['unicode-to-preeti','Unicode → Preeti']],
  'unicode-to-preeti':[['unicode-to-preeti','Unicode → Preeti'],['preeti-to-unicode','Preeti → Unicode']],
+ 'bamini-to-unicode':[['bamini-to-unicode','Bamini → Unicode'],['unicode-to-bamini','Unicode → Bamini']],
+ 'unicode-to-bamini':[['unicode-to-bamini','Unicode → Bamini'],['bamini-to-unicode','Bamini → Unicode']],
  'unicode-normalizer':[['NFC','NFC – Canonical composition'],['NFD','NFD – Canonical decomposition'],['NFKC','NFKC – Compatibility composition'],['NFKD','NFKD – Compatibility decomposition']],
  'remove-invisible-characters':[['remove','Remove invisible characters'],['report','Show invisible character report']],
  'text-cleaner':[['trim','Trim line edges'],['spaces','Collapse repeated spaces'],['blank','Remove repeated blank lines'],['all','Apply all cleanup rules']],
@@ -19,6 +21,8 @@ if(modeSets[tool])setModes(modeSets[tool]);
 const samples={
  'preeti-to-unicode':'g]kfnL efiff',
  'unicode-to-preeti':'नेपाल भाषा',
+ 'bamini-to-unicode':'தமிழ் மொழி',
+ 'unicode-to-bamini':'தமிழ் மொழி',
  'unicode-text-converter':'Hello Unicode — नमस्ते दुनिया 🌍',
  'html-encode-decode':'UnicodeFix & text <tools> "work"',
  'url-encode-decode':'UnicodeFix text tools & utilities',
@@ -41,6 +45,7 @@ const fromAscii=s=>{if(!s.trim())return '';const nums=s.trim().split(/[\\s,]+/);
 const invisible=/[\p{Cf}\u00AD\u034F\u115F\u1160\u17B4\u17B5\u180B-\u180E\uFE00-\uFE0F\uFEFF\uFFF9-\uFFFB]/gu;
 const run=()=>{if(!input||!output)return;const v=input.value;const action=mode?.value||'encode';try{let r='';
 if(tool==='preeti-to-unicode'||tool==='unicode-to-preeti'){if(!window.UnicodeFixPreeti)throw Error('Preeti conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-preeti'?window.UnicodeFixPreeti.fromUnicode(v):window.UnicodeFixPreeti.toUnicode(v);}
+else if(tool==='bamini-to-unicode'||tool==='unicode-to-bamini'){if(!window.UnicodeFixBamini)throw Error('Bamini conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-bamini'?window.UnicodeFixBamini.fromUnicode(v):window.UnicodeFixBamini.toUnicode(v);}
 else if(tool==='html-encode-decode'){if(action==='decode'){const d=document.createElement('textarea');d.innerHTML=v;r=d.value;}else{r=v.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}}
 else if(tool==='url-encode-decode'){r=action==='decode'?decodeURIComponent(v.replace(/\+/g,' ')):encodeURIComponent(v);}
 else if(tool==='base64-encode-decode'){if(action==='decode'){const bytes=Uint8Array.from(atob(v.trim()),c=>c.charCodeAt(0));r=new TextDecoder('utf-8',{fatal:true}).decode(bytes);}else{const bytes=new TextEncoder().encode(v);let bin='';bytes.forEach(b=>bin+=String.fromCharCode(b));r=btoa(bin);}}

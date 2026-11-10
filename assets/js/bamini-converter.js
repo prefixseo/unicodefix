@@ -1,6 +1,8 @@
 /* Bamini Tamil legacy font converter.
- * Mapping adapted from aril by Sanjaiyan Parthipan.
- * Source: https://github.com/digital-tamil/aril
+ * Adapted from legacy-fonts-to-unicode by Osama Mumtaz, whose Bamini
+ * mappings are in turn adapted from aril by Sanjaiyan Parthipan.
+ * Sources: https://github.com/osamamumtaz01/legacy-fonts-to-unicode
+ *          https://github.com/digital-tamil/aril
  * License: MIT (see THIRD-PARTY-NOTICES.txt).
  */
 const PULLI = '்';

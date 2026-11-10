@@ -5,18 +5,18 @@ DirectoryIndex index.php
 RewriteEngine On
 
 # Block dotfiles and internal project files from direct web access.
-RewriteRule (^|/)\\.(?!well-known(?:/|$)) - [F,L]
-RewriteRule ^(?:README\\.txt|THIRD-PARTY-NOTICES\\.txt|\\.gitignore)$ - [F,L]
+RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F,L]
+RewriteRule ^(?:README\.txt|THIRD-PARTY-NOTICES\.txt|\.gitignore)$ - [F,L]
 RewriteRule ^(config|includes)/ - [F,L]
 
 # Canonicalize the direct front-controller URL.
-RewriteCond %{THE_REQUEST} \\s/+index\\.php(?:[?\\s]) [NC]
-RewriteRule ^index\\.php$ https://unicodefix.com/ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+index\.php(?:[?\s]) [NC]
+RewriteRule ^index\.php$ https://unicodefix.com/ [R=301,L]
 
 # Enforce HTTPS and the non-www canonical hostname.
-RewriteCond %{HTTP_HOST} ^(www\\.)?unicodefix\\.com$ [NC]
+RewriteCond %{HTTP_HOST} ^(www\.)?unicodefix\.com$ [NC]
 RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} ^www\\.unicodefix\\.com$ [NC]
+RewriteCond %{HTTP_HOST} ^www\.unicodefix\.com$ [NC]
 RewriteRule ^ https://unicodefix.com%{REQUEST_URI} [R=301,L]
 
 # Route clean one-segment tool and information URLs through the front controller.
@@ -32,10 +32,10 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
 # Assets are cached for one day without immutable, so deployments can update them promptly.
-<FilesMatch "\\.(css|js|svg|png|jpg|jpeg|webp|woff2)$">
+<FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|woff2)$">
  Header set Cache-Control "public, max-age=86400"
 </FilesMatch>
-<FilesMatch "\\.(php|html?)$">
+<FilesMatch "\.(php|html?)$">
  Header set Cache-Control "no-cache"
 </FilesMatch>
 </IfModule>

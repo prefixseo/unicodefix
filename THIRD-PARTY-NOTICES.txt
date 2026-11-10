@@ -92,3 +92,12 @@ https://github.com/shabados/shabados/tree/main/packages/gurmukhi
 Copyright (c) 2026 Shabad OS contributors.
 
 The upstream package documents this legacy ASCII encoding as used by older Gurmukhi fonts including AnmolLipi and GurmukhiAkhar. Its conversion is lossy for some variant distinctions; the UnicodeFix implementation targets Unicode Consortium Gurmukhi output. The MIT license terms and attribution are retained in the converter source.
+
+
+Chanakya ↔ Unicode Devanagari conversion engine
+
+The Chanakya mapping arrays and conversion logic in assets/js/chanakya-converter.js are adapted from the MIT-licensed hindi-font-converter project by Manish Prajapati:
+https://github.com/manishprajapatidev/hindi-font-converter
+Copyright (c) 2020 MANISH PRAJAPATI.
+
+The integration retains the MIT attribution and permission notice. The mapping targets the Chanakya profile in that project; custom and Walkman-Chanakya variants may differ.

@@ -17,6 +17,8 @@ const modeSets={
  'unicode-to-fm-abaya':[['unicode-to-fm-abaya','Unicode → FM Abhaya'],['fm-abaya-to-unicode','FM Abhaya → Unicode']],
  'anmollipi-to-unicode':[['anmollipi-to-unicode','AnmolLipi → Unicode'],['unicode-to-anmollipi','Unicode → AnmolLipi']],
  'unicode-to-anmollipi':[['unicode-to-anmollipi','Unicode → AnmolLipi'],['anmollipi-to-unicode','AnmolLipi → Unicode']],
+ 'chanakya-to-unicode':[['chanakya-to-unicode','Chanakya → Unicode'],['unicode-to-chanakya','Unicode → Chanakya']],
+ 'unicode-to-chanakya':[['unicode-to-chanakya','Unicode → Chanakya'],['chanakya-to-unicode','Chanakya → Unicode']],
  'unicode-to-non-unicode':[['preeti','Preeti — Nepali'],['bamini','Bamini — Tamil'],['bijoy','Bijoy / SutonnyMJ — Bengali'],['fm-abaya','FM Abhaya — Sinhala']],
  'unicode-normalizer':[['NFC','NFC – Canonical composition'],['NFD','NFD – Canonical decomposition'],['NFKC','NFKC – Compatibility composition'],['NFKD','NFKD – Compatibility decomposition']],
  'remove-invisible-characters':[['remove','Remove invisible characters'],['report','Show invisible character report']],
@@ -36,6 +38,8 @@ const samples={
  'unicode-to-fm-abaya':'ශ්‍රී ලංකාව ලස්සන රටකි.',
  'anmollipi-to-unicode':'gurU',
  'unicode-to-anmollipi':'ਗੁਰੂ',
+ 'chanakya-to-unicode':'ÖæÚUÌ °·¤ ×ãæÙ Îðàæ ãñÐ',
+ 'unicode-to-chanakya':'भारत एक महान देश है।',
  'unicode-to-non-unicode':'नेपाल भाषा',
  'unicode-text-converter':'Hello Unicode — नमस्ते दुनिया 🌍',
  'html-encode-decode':'UnicodeFix & text <tools> "work"',
@@ -63,6 +67,7 @@ else if(tool==='bamini-to-unicode'||tool==='unicode-to-bamini'){if(!window.Unico
 else if(tool==='bijoy-to-unicode'||tool==='unicode-to-bijoy'){if(!window.UnicodeFixBijoy)throw Error('Bijoy conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-bijoy'?window.UnicodeFixBijoy.fromUnicode(v):window.UnicodeFixBijoy.toUnicode(v);}
 else if(tool==='fm-abaya-to-unicode'||tool==='unicode-to-fm-abaya'){if(!window.UnicodeFixFMAbhaya)throw Error('FM Abhaya conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-fm-abaya'?window.UnicodeFixFMAbhaya.fromUnicode(v):window.UnicodeFixFMAbhaya.toUnicode(v);}
 else if(tool==='anmollipi-to-unicode'||tool==='unicode-to-anmollipi'){if(!window.UnicodeFixAnmolLipi)throw Error('AnmolLipi conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-anmollipi'?window.UnicodeFixAnmolLipi.fromUnicode(v):window.UnicodeFixAnmolLipi.toUnicode(v);}
+else if(tool==='chanakya-to-unicode'||tool==='unicode-to-chanakya'){if(!window.UnicodeFixChanakya)throw Error('Chanakya conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-chanakya'?window.UnicodeFixChanakya.toChanakya(v):window.UnicodeFixChanakya.toUnicode(v);}
 else if(tool==='unicode-to-non-unicode'){const encoders={preeti:()=>window.UnicodeFixPreeti?.fromUnicode(v),bamini:()=>window.UnicodeFixBamini?.fromUnicode(v),bijoy:()=>window.UnicodeFixBijoy?.fromUnicode(v),'fm-abaya':()=>window.UnicodeFixFMAbhaya?.fromUnicode(v),anmollipi:()=>window.UnicodeFixAnmolLipi?.fromUnicode(v)};const encode=encoders[action];if(!encode)throw Error('Choose a supported target font.');const result=encode();if(typeof result!=='string')throw Error('The selected conversion engine could not be loaded. Refresh and try again.');r=result;}
 else if(tool==='html-encode-decode'){if(action==='decode'){const d=document.createElement('textarea');d.innerHTML=v;r=d.value;}else{r=v.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}}
 else if(tool==='url-encode-decode'){r=action==='decode'?decodeURIComponent(v.replace(/\+/g,' ')):encodeURIComponent(v);}

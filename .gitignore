@@ -1,0 +1,25 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.example.*
+
+# Dependencies and generated files
+/vendor/
+/node_modules/
+/.cache/
+/tmp/
+/logs/
+*.log
+error_log
+
+# Local editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local backups and exports
+*.bak
+*.sql
+*.zip

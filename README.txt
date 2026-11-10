@@ -24,9 +24,19 @@ SCRIPT LOADING
 
 CURRENT FUNCTIONAL TOOLS
 - Unicode character/code-point inspector
-- HTML encode/decode
-- URL encode/decode
-- UTF-8-safe Base64 encode/decode
+- Unicode Normalizer (NFC, NFD, NFKC, NFKD)
+- UTF-8 hexadecimal encoder/decoder
+- Invisible formatting character inspector/remover
+- Text cleaner (whitespace and line endings)
+- Unicode escape encoder/decoder
+- ASCII decimal encoder/decoder
+- Unicode-aware text case converter
+- Word, character, line and paragraph counter
+- HTML entity encoder/decoder
+- URL component encoder/decoder
+- UTF-8-safe Base64 encoder/decoder
+- Preeti <-> Unicode converter (Nepali)
+- Bamini <-> Unicode converter (Tamil)
 
 LEGACY CONVERTER STATUS
 Legacy font pages are intentionally noindex until verified mappings are implemented. Do not submit these URLs for indexing or advertise them as working converters until each font/version mapping has been tested with reliable samples. Font conversion can require script-specific reordering, ligatures, conjuncts and shaping rules; simple character substitution is not sufficient.
@@ -51,6 +61,13 @@ Before replacing the live files, keep a backup of your current public_html direc
 
 The new pages are marked indexable and included in sitemap.xml because their tools are implemented. Submit the updated sitemap in Search Console after confirming the pages load correctly on the live domain.
 
+
+MODULE 4 – BAMINI CONVERSION
+- Bamini to Unicode and Unicode to Bamini are enabled.
+- Both directions are available from either Tamil converter page.
+- Conversion runs locally in the visitor's browser.
+- The mapping is adapted from legacy-fonts-to-unicode by Osama Mumtaz, which in turn adapts aril's Bamini mapping; used under MIT. See THIRD-PARTY-NOTICES.txt.
+- Test Tamil vowel signs, pulli, ligatures, Grantha letters and punctuation with real documents before relying on output.
 
 MODULE 3 – PREETI CONVERSION
 - Preeti to Unicode and Unicode to Preeti are now enabled.

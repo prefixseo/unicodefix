@@ -57,3 +57,17 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Bijoy (SutonnyMJ ANSI) ↔ Unicode conversion engine
+
+The mapping tables and conversion behaviour in assets/js/bijoy-converter.js are adapted from the MIT-licensed legacy-fonts-to-unicode project by Osama Mumtaz:
+https://github.com/osamamumtaz01/legacy-fonts-to-unicode
+Copyright (c) 2026 Osama Mumtaz.
+
+The upstream Bijoy glyph tables identify and adapt data from these MIT-licensed projects:
+- bijoy2unicode 1.0.2 by Md. Jehad (Jehadur Rahman Emran), Copyright (c) 2026.
+- unicode2ascii 1.1.0 by Md. Nimuzzaman, Copyright (c) 2024.
+- @codesigntheory/bnbijoy2unicode 1.3.0 by Utsob Roy.
+
+The Bijoy source file retains its upstream attribution and MIT permission notice. The conversion engine's cluster reordering logic is rewritten in the upstream project. This integration retains the applicable MIT notices. The UnicodeFix page and UI are separate project work.

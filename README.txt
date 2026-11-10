@@ -66,7 +66,7 @@ MODULE 4 – BAMINI CONVERSION
 - Bamini to Unicode and Unicode to Bamini are enabled.
 - Both directions are available from either Tamil converter page.
 - Conversion runs locally in the visitor's browser.
-- The mapping is adapted from aril under its MIT license; see THIRD-PARTY-NOTICES.txt.
+- The mapping is adapted from legacy-fonts-to-unicode by Osama Mumtaz, which in turn adapts aril's Bamini mapping; used under MIT. See THIRD-PARTY-NOTICES.txt.
 - Test Tamil vowel signs, pulli, ligatures, Grantha letters and punctuation with real documents before relying on output.
 
 MODULE 3 – PREETI CONVERSION

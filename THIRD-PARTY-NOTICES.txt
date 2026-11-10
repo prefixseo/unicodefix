@@ -24,17 +24,21 @@ The UnicodeFix integration and interface are separate project work.
 
 Bamini ↔ Unicode conversion engine
 
-The Bamini character mappings in assets/js/bamini-converter.js are adapted
-from aril (aril-core, crates/aril-core/src/encodings/bamini.rs) by
-Sanjaiyan Parthipan: https://github.com/digital-tamil/aril
+The Bamini conversion logic and character tables in
+assets/js/bamini-converter.js are adapted from:
 
-Copyright (c) Sanjaiyan Parthipan.
+1. legacy-fonts-to-unicode by Osama Mumtaz
+   https://github.com/osamamumtaz01/legacy-fonts-to-unicode
+   Copyright (c) 2026 Osama Mumtaz.
+   License: MIT AND Apache-2.0; this Bamini component is used under MIT.
 
-License: MIT OR Apache-2.0; this integration uses the MIT License.
+2. aril by Sanjaiyan Parthipan
+   https://github.com/digital-tamil/aril
+   License: MIT OR Apache-2.0; the upstream Bamini mapping is used under MIT.
 
 MIT License
 
-Copyright (c) Sanjaiyan Parthipan
+Copyright (c) 2026 Osama Mumtaz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

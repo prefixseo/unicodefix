@@ -83,3 +83,12 @@ The upstream FM Abhaya glyph mapping is based on the MIT-licensed Pandukabhaya m
 https://github.com/akuruAI/pandukabhaya
 Copyright (c) 2024 akuruAI.
 The mapping source identifies the earlier UCSC Language Technology Research Laboratory converter / sinhala-unicode-converter by Janaka Chathuranga (MIT). The applicable MIT notices are retained in the converter source. The FM Abhaya font itself is proprietary and is not distributed by UnicodeFix.
+
+
+AnmolLipi / GurmukhiAkhar ↔ Unicode Gurmukhi conversion engine
+
+The legacy ASCII mapping, conversion sequence and Unicode normalization logic in assets/js/anmollipi-converter.js are adapted from the MIT-licensed Gurmukhi package by Shabad OS:
+https://github.com/shabados/shabados/tree/main/packages/gurmukhi
+Copyright (c) 2026 Shabad OS contributors.
+
+The upstream package documents this legacy ASCII encoding as used by older Gurmukhi fonts including AnmolLipi and GurmukhiAkhar. Its conversion is lossy for some variant distinctions; the UnicodeFix implementation targets Unicode Consortium Gurmukhi output. The MIT license terms and attribution are retained in the converter source.

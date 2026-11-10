@@ -21,8 +21,8 @@ if(modeSets[tool])setModes(modeSets[tool]);
 const samples={
  'preeti-to-unicode':'g]kfnL efiff',
  'unicode-to-preeti':'नेपाल भाषा',
- 'bamini-to-unicode':'தமிழ் மொழி',
- 'unicode-to-bamini':'தமிழ் மொழி',
+ 'bamini-to-unicode':'KUfd;',
+ 'unicode-to-bamini':'முருகன்',
  'unicode-text-converter':'Hello Unicode — नमस्ते दुनिया 🌍',
  'html-encode-decode':'UnicodeFix & text <tools> "work"',
  'url-encode-decode':'UnicodeFix text tools & utilities',

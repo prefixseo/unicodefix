@@ -20,3 +20,15 @@ and permission notice are included. The ISC license requires its copyright
 and permission notice to accompany copies.
 
 The UnicodeFix integration and interface are separate project work.
+
+
+Bamini ↔ Unicode conversion engine
+
+The Bamini character mappings in assets/js/bamini-converter.js are adapted
+from aril (aril-core, crates/aril-core/src/encodings/bamini.rs) by
+Sanjaiyan Parthipan: https://github.com/digital-tamil/aril
+
+License: MIT OR Apache-2.0; this integration uses the MIT License. The
+copyright and permission notice from the MIT license are retained in the
+source header. The MIT license text is available at:
+https://opensource.org/license/mit

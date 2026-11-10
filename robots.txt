@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /config/
+Sitemap: https://unicodefix.com/sitemap.xml

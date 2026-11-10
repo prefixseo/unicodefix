@@ -1,0 +1,22 @@
+UnicodeFix third-party notices
+===============================
+
+Preeti ↔ Unicode conversion engine
+
+The Preeti character mappings and conversion ordering rules in
+assets/js/preeti-converter.js are adapted from the following projects:
+
+1. preeti2unicode v1.0.7 by Roj Tamang and Navraj Bhattarai.
+   License: MIT.
+   Copyright (c) Roj Tamang, Navraj Bhattarai.
+
+2. unicode-to-preeti v1.0.0 by Milkesh Shrestha.
+   License: ISC.
+   Copyright (c) Milkesh Shrestha.
+
+The applicable license notices are retained in the source header. The MIT
+license permits use, modification and distribution provided that the copyright
+and permission notice are included. The ISC license requires its copyright
+and permission notice to accompany copies.
+
+The UnicodeFix integration and interface are separate project work.

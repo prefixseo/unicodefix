@@ -1,0 +1,1 @@
+The interface uses CSS-drawn elements and system fonts; no external fonts, icon libraries, images, or third-party scripts are required.

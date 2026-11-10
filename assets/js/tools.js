@@ -13,6 +13,8 @@ const modeSets={
  'unicode-to-bamini':[['unicode-to-bamini','Unicode → Bamini'],['bamini-to-unicode','Bamini → Unicode']],
  'bijoy-to-unicode':[['bijoy-to-unicode','Bijoy → Unicode'],['unicode-to-bijoy','Unicode → Bijoy']],
  'unicode-to-bijoy':[['unicode-to-bijoy','Unicode → Bijoy'],['bijoy-to-unicode','Bijoy → Unicode']],
+ 'fm-abaya-to-unicode':[['fm-abaya-to-unicode','FM Abhaya → Unicode'],['unicode-to-fm-abaya','Unicode → FM Abhaya']],
+ 'unicode-to-fm-abaya':[['unicode-to-fm-abaya','Unicode → FM Abhaya'],['fm-abaya-to-unicode','FM Abhaya → Unicode']],
  'unicode-normalizer':[['NFC','NFC – Canonical composition'],['NFD','NFD – Canonical decomposition'],['NFKC','NFKC – Compatibility composition'],['NFKD','NFKD – Compatibility decomposition']],
  'remove-invisible-characters':[['remove','Remove invisible characters'],['report','Show invisible character report']],
  'text-cleaner':[['trim','Trim line edges'],['spaces','Collapse repeated spaces'],['blank','Remove repeated blank lines'],['all','Apply all cleanup rules']],
@@ -27,6 +29,8 @@ const samples={
  'unicode-to-bamini':'முருகன்',
  'bijoy-to-unicode':'Avwg evsjvq Mvb MvB',
  'unicode-to-bijoy':'আমি বাংলায় গান গাই',
+ 'fm-abaya-to-unicode':"› ,xldj ,iaik rgls'",
+ 'unicode-to-fm-abaya':'ශ්‍රී ලංකාව ලස්සන රටකි.',
  'unicode-text-converter':'Hello Unicode — नमस्ते दुनिया 🌍',
  'html-encode-decode':'UnicodeFix & text <tools> "work"',
  'url-encode-decode':'UnicodeFix text tools & utilities',
@@ -51,6 +55,7 @@ const run=()=>{if(!input||!output)return;const v=input.value;const action=mode?.
 if(tool==='preeti-to-unicode'||tool==='unicode-to-preeti'){if(!window.UnicodeFixPreeti)throw Error('Preeti conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-preeti'?window.UnicodeFixPreeti.fromUnicode(v):window.UnicodeFixPreeti.toUnicode(v);}
 else if(tool==='bamini-to-unicode'||tool==='unicode-to-bamini'){if(!window.UnicodeFixBamini)throw Error('Bamini conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-bamini'?window.UnicodeFixBamini.fromUnicode(v):window.UnicodeFixBamini.toUnicode(v);}
 else if(tool==='bijoy-to-unicode'||tool==='unicode-to-bijoy'){if(!window.UnicodeFixBijoy)throw Error('Bijoy conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-bijoy'?window.UnicodeFixBijoy.fromUnicode(v):window.UnicodeFixBijoy.toUnicode(v);}
+else if(tool==='fm-abaya-to-unicode'||tool==='unicode-to-fm-abaya'){if(!window.UnicodeFixFMAbhaya)throw Error('FM Abhaya conversion engine could not be loaded. Refresh and try again.');r=action==='unicode-to-fm-abaya'?window.UnicodeFixFMAbhaya.fromUnicode(v):window.UnicodeFixFMAbhaya.toUnicode(v);}
 else if(tool==='html-encode-decode'){if(action==='decode'){const d=document.createElement('textarea');d.innerHTML=v;r=d.value;}else{r=v.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}}
 else if(tool==='url-encode-decode'){r=action==='decode'?decodeURIComponent(v.replace(/\+/g,' ')):encodeURIComponent(v);}
 else if(tool==='base64-encode-decode'){if(action==='decode'){const bytes=Uint8Array.from(atob(v.trim()),c=>c.charCodeAt(0));r=new TextDecoder('utf-8',{fatal:true}).decode(bytes);}else{const bytes=new TextEncoder().encode(v);let bin='';bytes.forEach(b=>bin+=String.fromCharCode(b));r=btoa(bin);}}

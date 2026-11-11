@@ -65,4 +65,12 @@ const checks = [
   ['remove-invisible-characters','A\u200BB\uFEFFC','remove','ABC'],
 ];
 for (const [slug,input,mode,expected] of checks) { const result=createPage(slug).run(input,mode); assert.equal(result.output,expected,slug+' / '+mode+' output'); assert.match(result.status,/Done|Normalized|Already normalized/,slug+' / '+mode+' status'); }
+
+const normalizerSamples = createPage('unicode-normalizer');
+normalizerSamples.elements['tool-mode'].value='NFC';
+normalizerSamples.elements['sample-btn'].dispatch('click');
+assert.equal(normalizerSamples.elements['tool-input'].value,'Cafe\u0301','NFC sample must contain decomposed text');
+normalizerSamples.elements['tool-mode'].value='NFKC';
+normalizerSamples.elements['sample-btn'].dispatch('click');
+assert.equal(normalizerSamples.elements['tool-input'].value,'① ﬁancée','NFKC sample must include compatibility characters');
 console.log('Utility batch 1 passed');

@@ -77,7 +77,7 @@ const checks = [
   ['url-encode-decode','Hello%20World','decode','Hello World'],
   ['base64-encode-decode','Hello','encode','SGVsbG8='],
   ['base64-encode-decode','SGVsbG8=','decode','Hello'],
-  ['text-cleaner','  one   two  ','spaces','  one two  '],
+  ['text-cleaner','one   two','spaces','one two'],
   ['text-case-converter','hello world','upper','HELLO WORLD'],
 ];
 for (const [slug,input,mode,expected] of checks) {

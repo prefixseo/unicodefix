@@ -33,7 +33,15 @@ jobs:
           done
       - name: Test legacy engine loading
         run: node tests/js-smoke.js
-      - name: Test Unicode and text utility behaviour
-        run: node tests/js-utilities-integration.js
+      - name: Test Unicode utility batch 1
+        run: node tests/js-utilities-1.js
+      - name: Test Unicode utility batch 2
+        run: node tests/js-utilities-2.js
+      - name: Test Unicode utility batch 3
+        run: node tests/js-utilities-3.js
+      - name: Test Unicode utility batch 4
+        run: node tests/js-utilities-4.js
+      - name: Test Unicode utility batch 5
+        run: node tests/js-utilities-5.js
       - name: Test legacy converter output mappings
         run: node tests/js-engines-integration.js

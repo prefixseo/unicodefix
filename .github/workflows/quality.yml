@@ -30,3 +30,4 @@ jobs:
           for file in assets/js/*.js; do
             node --check "$file"
           done
+          node tests/js-smoke.js

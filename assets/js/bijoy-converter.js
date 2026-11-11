@@ -1,3 +1,5 @@
+(function () {
+'use strict';
 /**
  * Bijoy (SutonnyMJ ANSI) <-> Unicode Bangla converter.
  *
@@ -482,3 +484,4 @@ function fromUnicode(s) {
 
 // UnicodeFix browser API.
 window.UnicodeFixBijoy = Object.freeze({ toUnicode, fromUnicode });
+})();

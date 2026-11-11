@@ -1,3 +1,5 @@
+(function () {
+'use strict';
 /* Chanakya ↔ Unicode Devanagari converter.
  * Adapted from the MIT-licensed hindi-font-converter project:
  * https://github.com/manishprajapatidev/hindi-font-converter
@@ -57,3 +59,4 @@ function toChanakya(input){
  return s.replace(/È¸ý/g,'Èý¸¤').replace(/d/g,'ç').replace(/„/g,'ËÜ');
 }
 window.UnicodeFixChanakya=Object.freeze({toUnicode,toChanakya});
+})();

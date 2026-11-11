@@ -1,3 +1,5 @@
+(function () {
+'use strict';
 /* Bamini Tamil legacy font converter.
  * Adapted from legacy-fonts-to-unicode by Osama Mumtaz, whose Bamini
  * mappings are in turn adapted from aril by Sanjaiyan Parthipan.
@@ -205,3 +207,4 @@ function fromUnicode(s) {
 }
 
 window.UnicodeFixBamini = Object.freeze({toUnicode, fromUnicode});
+})();

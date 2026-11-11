@@ -58,6 +58,7 @@ function createPage(slug) {
 }
 
 const engineChecks = [
+  ['preeti-to-unicode','g]kfnL efiff','preeti-to-unicode','नेपाली भाषा'],
   ['bijoy-to-unicode','Avwg evsjvq Mvb MvB','bijoy-to-unicode','আমি বাংলায় গান গাই'],
   ['fm-abaya-to-unicode',"› ,xldj ,iaik rgls'",'fm-abaya-to-unicode','ශ්‍රී ලංකාව ලස්සන රටකි.'],
   ['bamini-to-unicode','KUfd;','bamini-to-unicode','முருகன்'],

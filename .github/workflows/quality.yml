@@ -37,8 +37,16 @@ jobs:
         run: node tests/js-utilities-1.js
       - name: Test Unicode utility batch 2
         run: node tests/js-utilities-2.js
-      - name: Test Unicode utility batch 3
-        run: node tests/js-utilities-3.js
+      - name: Test UTF-8 decoder
+        run: node tests/js-utility-case-1.js
+      - name: Test Unicode escape decoder
+        run: node tests/js-utility-case-2.js
+      - name: Test ASCII decoder
+        run: node tests/js-utility-case-3.js
+      - name: Test HTML encode and decode
+        run: node tests/js-utility-case-4.js
+      - name: Test HTML entity decoder
+        run: node tests/js-utility-case-5.js
       - name: Test Unicode utility batch 4
         run: node tests/js-utilities-4.js
       - name: Test Unicode utility batch 5

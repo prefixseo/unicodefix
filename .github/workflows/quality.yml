@@ -32,4 +32,7 @@ jobs:
             node --check "$file"
           done
           node tests/js-smoke.js
-          node tests/js-integration.js
+      - name: Test Unicode and text utility behaviour
+        run: node tests/js-utilities-integration.js
+      - name: Test legacy converter output mappings
+        run: node tests/js-engines-integration.js

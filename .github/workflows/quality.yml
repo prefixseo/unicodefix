@@ -25,9 +25,31 @@ jobs:
           php -l config/tools.php
           php -l includes/header.php
           php -l includes/footer.php
+          php tests/site-audit.php
       - name: Check JavaScript syntax
         run: |
           for file in assets/js/*.js; do
             node --check "$file"
           done
-          node tests/js-smoke.js
+      - name: Test legacy engine loading
+        run: node tests/js-smoke.js
+      - name: Test Unicode utility batch 1
+        run: node tests/js-utilities-1.js
+      - name: Test Unicode utility batch 2
+        run: node tests/js-utilities-2.js
+      - name: Test UTF-8 decoder
+        run: node tests/js-utility-case-1.js
+      - name: Test Unicode escape decoder
+        run: node tests/js-utility-case-2.js
+      - name: Test ASCII decoder
+        run: node tests/js-utility-case-3.js
+      - name: Test HTML encode and decode
+        run: node tests/js-utility-case-4.js
+      - name: Test HTML entity decoder
+        run: node tests/js-utility-case-5.js
+      - name: Test Unicode utility batch 4
+        run: node tests/js-utilities-4.js
+      - name: Test Unicode utility batch 5
+        run: node tests/js-utilities-5.js
+      - name: Test legacy converter output mappings
+        run: node tests/js-engines-integration.js

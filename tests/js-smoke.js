@@ -33,5 +33,5 @@ for (const [file, apiName, method, sample] of engines) {
 
 const toolsJs = fs.readFileSync(path.join(root, 'assets/js/tools.js'), 'utf8');
 assert.match(toolsJs, /action==='decode'\?decodeCodePoints\(v\)/, 'Unicode Text Converter Decode must use the decoder');
-assert.match(toolsJs, /cp!==0x200c&&cp!==0x200d/, 'Invisible cleanup must preserve ZWNJ and ZWJ');
+assert.ok(toolsJs.includes('isInvisibleSpace(ch)||/\\p{Cf}/u.test(ch)'), 'Invisible cleanup must remove Unicode format controls including ZWNJ and ZWJ');
 console.log('Legacy engine isolation and Unicode utility smoke checks passed.');

@@ -1,3 +1,5 @@
+(function () {
+'use strict';
 /* AnmolLipi / GurmukhiAkhar legacy ASCII ↔ Unicode Gurmukhi converter.
  * Adapted from the MIT-licensed Shabad OS Gurmukhi package:
  * https://github.com/shabados/shabados/tree/main/packages/gurmukhi
@@ -60,3 +62,4 @@ function fromUnicode(input){
  return replace(s,COMBOS);
 }
 window.UnicodeFixAnmolLipi=Object.freeze({toUnicode,fromUnicode});
+})();

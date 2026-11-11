@@ -31,7 +31,8 @@ jobs:
           for file in assets/js/*.js; do
             node --check "$file"
           done
-          node tests/js-smoke.js
+      - name: Test legacy engine loading
+        run: node tests/js-smoke.js
       - name: Test Unicode and text utility behaviour
         run: node tests/js-utilities-integration.js
       - name: Test legacy converter output mappings

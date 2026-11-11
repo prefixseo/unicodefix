@@ -1,3 +1,5 @@
+(function () {
+'use strict';
 // FM Abhaya (and the rest of the FM family: FM Malithi, FM Bindumathi, FM Emanee ...)
 // <-> Sinhala Unicode.
 //
@@ -248,3 +250,4 @@ function fromUnicode(s) {
 
 
 window.UnicodeFixFMAbhaya = Object.freeze({ toUnicode, fromUnicode });
+})();

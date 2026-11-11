@@ -59,6 +59,7 @@ function createPage(slug) {
 
 const checks = [
   ['ascii-converter','72 105','decode','Hi'],
+  ['ascii-converter','ABC','encode','65 66 67'],
 ];
 for (const [slug,input,mode,expected] of checks) { const result=createPage(slug).run(input,mode); assert.equal(result.output,expected,slug+' / '+mode+' output'); assert.match(result.status,/Done|Normalized|Already normalized/,slug+' / '+mode+' status'); }
 console.log('Utility batch 3 case 3 passed');

@@ -57,12 +57,16 @@ function createPage(slug) {
   }};
 }
 
+const invisibleSample = 'A\u3164B\u200BC\u00A0D\u2800E\u200DF\uFFA0G\u3000H\u200CI';
 const checks = [
   ['url-encode-decode','Hello World','encode','Hello%20World'],
   ['url-encode-decode','Hello%20World','decode','Hello World'],
   ['base64-encode-decode','Hello','encode','SGVsbG8='],
   ['base64-encode-decode','SGVsbG8=','decode','Hello'],
   ['text-cleaner','one   two','spaces','one two'],
+  ['remove-invisible-characters',invisibleSample,'remove','ABCDEFGHI'],
+  ['remove-invisible-characters',invisibleSample,'report','Position 1: U+3164\nPosition 3: U+200B\nPosition 5: U+00A0\nPosition 7: U+2800\nPosition 9: U+200D\nPosition 11: U+FFA0\nPosition 13: U+3000\nPosition 15: U+200C'],
+  ['text-cleaner',invisibleSample,'all','A B C D E F G H I'],
 ];
 for (const [slug,input,mode,expected] of checks) { const result=createPage(slug).run(input,mode); assert.equal(result.output,expected,slug+' / '+mode+' output'); assert.match(result.status,/Done|Normalized|Already normalized/,slug+' / '+mode+' status'); }
 console.log('Utility batch 4 passed');
